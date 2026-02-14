@@ -1,0 +1,91 @@
+{% load django_browser_reload %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ title }} | Mood Board{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="{% url 'index' %}" class="nav-logo">
+        <!-- Replace with the path to your actual logo file -->
+        <img src="{% static 'default_user.png' %}" alt="PeriwinklePunk Logo">
+    </a>
+        <div class="nav-links">
+            <a href="{% url 'index' %}">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Books</button>
+                <div class="dropdown-content">
+                    <a href="{% url 'mybooks' %}">My Books</a>
+                    <a href="{% url 'moodboard' %}">Mood Board</a>
+                </div>
+            </div>            
+            <a href="{% url 'updates' %}">Author Notes</a>
+            <a href="{% url 'about' %}">About</a>
+        </div>
+        <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="theme-checkbox">
+                <input type="checkbox" id="theme-checkbox" />
+                <div class="slider round"></div>
+            </label>
+        </div>
+    </nav>
+
+    <main class="content-area">
+        
+        <div class="page-content">
+            <h1>Book Moodboard</h1>
+            <p>As a lover of books, let me share with you some of my recommendations. Type in what mood you are feeling below!</p>
+        </div>
+
+        <!-- === CHATBOX HTML START === -->
+        <div class="chat-container">
+            
+            <!-- The area where messages will appear -->
+            <div class="chat-messages">
+                <!-- Example chat messages -->
+                <div class="message received">
+                    <span class="message-author">Bookbot</span>
+                    <p>Hi, what kind of books are you in the mood for?</p>
+                    
+                    </div>
+                <div class="message sent">
+                    <span class="message-author">You</span>
+                    <p>Sweet and sad books</p>
+                    
+                    </div>
+                <div class="message received">
+                    <span class="message-author">Casey</span>
+                    <p>Here's five recommendations: </p>
+                    
+                </div>
+            </div>
+
+            <!-- The input area at the bottom -->
+            <div class="chat-input-area">
+                <input type="text" placeholder="Type your message...">
+                <button>Send</button>
+            </div>
+
+        </div>
+        
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Cristina Ochoa. All Rights Reserved.</p>
+            <!-- Social media links can be added here later -->
+        </div>
+    </footer>
+    
+    <!-- === THREE.JS SCRIPTS === -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="{% static 'theme-toggle.js' %}"></script>
+    <script src="{% static 'wordbg.js' %}"></script>
+</body>
+</html>

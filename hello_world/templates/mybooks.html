@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{{ title }} | Home Page{% endblock %}</title>
+    <title>{% block title %}{{ title }} | Author's Books{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
@@ -29,31 +29,15 @@
             <a href="{% url 'about' %}">About</a>
         </div>
         <div class="theme-switch-wrapper">
-            <label class="theme-switch" for="theme-checkbox">
-                <input type="checkbox" id="theme-checkbox" />
-                <div class="slider round"></div>
-            </label>
-        </div>
+        <label class="theme-switch" for="theme-checkbox">
+            <input type="checkbox" id="theme-checkbox" />
+            <div class="slider round"></div>
+        </label>
+    </div>
     </nav>
 
     <main class="content-area">
-        <div class="author-grid-container">
-            
-            <h1 class="grid-title">You'e home, babe</h1>
-
-            <div class="grid-subtitle">I'm an all American girl with a French twist with a get-shit-done mentality with a poet's sensibility.</div>
-            
-            <div class="grid-image">
-                <!-- Placeholder image - replace with your own -->
-                <img src="{% static 'default_user.png' %}" alt="Portrait of the author">
-            </div> 
-            <div class="grid-text">     
-                <h2>A Colorful Journey</h2>
-                <p>Being an Aries with Pisces moon has created a colorful, yet challenging life. Balancing bold impulses with a desire to constantly get lost in fantasty is tricky business.</p>
-            </div>
-        </div>
-        
-        <h2 class="page-title">Find Yourself in My World</h2>
+        <h1 class="page-title">A Collection of Works</h1>
 
         <!-- This container will hold all our book cards -->
         <div class="book-gallery">
@@ -78,25 +62,7 @@
                 </div>
             </div>
         </div>
-
-        <div class="author-grid-container">
-            
-            <h1 class="grid-title"> </h1>
-
-            <div class="grid-subtitle"> </div>
-            
-            <div class="grid-image">
-                <!-- Placeholder image - replace with your own -->
-                <img src="{% static 'default_user.png' %}" alt="Portrait of the author">
-            </div> 
-            <div class="grid-text">     
-                <h2>I'm Cristina</h2>
-                <p>I am living in my own world a lot of the time, and my biggest life goal is to make that world as joyful as possible.</p>
-            </div>
-        </div>
-      
     </main>
-
     <footer class="site-footer">
         <div class="footer-content">
             <p>&copy; 2026 Cristina Ochoa. All Rights Reserved.</p>
@@ -104,7 +70,6 @@
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="{% static 'theme-toggle.js' %}"></script>
     
 </body>
