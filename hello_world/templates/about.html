@@ -1,0 +1,60 @@
+{% load django_browser_reload %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ title }} | About{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="{% url 'index' %}" class="nav-logo">
+        <!-- Replace with the path to your actual logo file -->
+        <img src="{% static 'default_user.png' %}" alt="PeriwinklePunk Logo">
+    </a>
+        <div class="nav-links">
+            <a href="{% url 'index' %}">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Books</button>
+                <div class="dropdown-content">
+                    <a href="{% url 'mybooks' %}">My Books</a>
+                    <a href="{% url 'moodboard' %}">Mood Board</a>
+                </div>
+            </div>            
+            <a href="{% url 'updates' %}">Author Notes</a>
+            <a href="{% url 'about' %}">About</a>
+        </div>
+        <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="theme-checkbox">
+                <input type="checkbox" id="theme-checkbox" />
+                <div class="slider round"></div>
+            </label>
+        </div>    
+    </nav>
+
+    <main class="content-area">
+            <h1>Hi, I'm Cristina</h1>
+            <img src="{% static 'default_user.png' %}" alt="Portrait of the author">    
+            <h2>A Colorful Journey</h2>
+            <p>Being an Aries with Pisces moon has created a colorful, yet challenging life. Balancing bold impulses with a desire to constantly get lost in fantasty is tricky business.</p>
+            <h2>Yes, I am a laugher... </h2>
+            <p>But I am also extremely shy. What am I doing on many a Friday night? Reading at a bar. You know, so I can be around people without having to talk to people.</p>
+            <h2>I'm also a huge goof... </h2>
+            <p>You won't often find me being embarrassed to break out the running man in Barnes & Noble or make a silly face waiting for ice cream.</p>
+        
+            
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Cristina Ochoa. All Rights Reserved.</p>
+            <!-- Social media links can be added here later -->
+        </div>
+    </footer>
+    <script src="{% static 'theme-toggle.js' %}"></script>
+</body>
+</html>
