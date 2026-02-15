@@ -1,10 +1,16 @@
-# GitHub Codespaces ♥️ Django
+# Django Version for Choco Capp Website
 
-Welcome to your shiny new Codespace running Django! We've got everything fired up and running for you to explore Django.
+Django project that contains full website for Chocolate Cappuccino. 
 
-You've got a blank canvas to work on from a git perspective as well. There's a single initial commit with what you're seeing right now - where you go from here is up to you!
+## Future Work
 
-Everything you do here is contained within this one codespace. There is no repository on GitHub yet. If and when you’re ready you can click "Publish Branch" and we’ll create your repository and push up your project. If you were just exploring then and have no further need for this code then you can simply delete your codespace and it's gone forever.
+1. Add Python file for LLM chat results.
+
+2. Make API to send results to Moodboard page.
+
+3. Add 'Shop' icon for future shop books page.
+
+5. Add Dark/Light mode icon for the toggle button on pages.
 
 ## installing dependancies
 
